@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>READ ME &#8212; EDAB Automated Data Import Template Library 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utility Functions and Classes" href="util.html" />
+    <link rel="prev" title="Welcome to autodoc-generation’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="read-me">
+<h1>READ ME<a class="headerlink" href="#read-me" title="Link to this heading">¶</a></h1>
+<section id="data-import-workflow-installation-and-running-locally">
+<h2>Data Import Workflow Installation and Running Locally<a class="headerlink" href="#data-import-workflow-installation-and-running-locally" title="Link to this heading">¶</a></h2>
+<p>This library automates data retrieval using a user-supplied configuration file, making it easier to pull predefined datasets without manual work. The configuration file specifies which platform to pull data from (ERDDAP, OPeNDAP, or GlobusAPI), what parameters to use, and where to store the results.</p>
+<section id="running-the-application">
+<h3>Running the Application:<a class="headerlink" href="#running-the-application" title="Link to this heading">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">bold<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Requirements</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>Install all required python packages using the below command in the main application directory:</p>
+<dl class="field-list simple">
+<dt class="field-odd">code<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pip install -r requirements.txt</p>
+</dd>
+</dl>
+</section>
+<section id="creating-a-config-file">
+<h3>Creating a Config File<a class="headerlink" href="#creating-a-config-file" title="Link to this heading">¶</a></h3>
+<p>The configuration file defines the target resource parameters and the source server. Expansion into other data platforms (OpenDAP, Globus, etc) are in progress.</p>
+<p>In order to create your own configuration file by copying either of the provided config yaml files (ex: erddap-griddap-config.yaml) and editing with the necessary values to create your own configuration file. Use the path of your create config file as the first argument in running the application. The required data types for each field are defined within the variable.yaml fil.</p>
+<dl class="field-list simple">
+<dt class="field-odd">bold<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <cite>variable.yaml</cite> file should only be updated if a new version of the configuration file is released.</p>
+</dd>
+</dl>
+</section>
+<section id="id1">
+<h3>Running the Application<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>To run the application, ensure you are in the main application directory (same directory as app.py) and run the below command with your config file and the validation file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">code<span class="colon">:</span></dt>
+<dd class="field-odd"><p>./app.py {config file path} variable.yaml</p>
+</dd>
+</dl>
+<p>To obtain data pulled, uncomment the write(file) statement within the app.py.</p>
+</section>
+<section id="running-tests">
+<h3>Running tests:<a class="headerlink" href="#running-tests" title="Link to this heading">¶</a></h3>
+<p>To run tests, install pytest using the following command:</p>
+<dl class="field-list simple">
+<dt class="field-odd">code<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pip install pytest</p>
+</dd>
+</dl>
+<p>From there, cd into either the data_retrieval or parser_testing directories. Run a test on either using the command:</p>
+<dl class="field-list simple">
+<dt class="field-odd">code<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pytest test_parse_config.py or test_data_retrieval.py</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+<section id="disclosure">
+<h1>Disclosure<a class="headerlink" href="#disclosure" title="Link to this heading">¶</a></h1>
+<p>This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">EDAB Automated Data Import Template Library</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">READ ME</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-import-workflow-installation-and-running-locally">Data Import Workflow Installation and Running Locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#disclosure">Disclosure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Utility Functions and Classes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to autodoc-generation’s documentation!</a></li>
+      <li>Next: <a href="util.html" title="next chapter">Utility Functions and Classes</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Christina Asante.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/readme.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

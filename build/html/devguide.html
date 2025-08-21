@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developer’s Guide &#8212; EDAB Automated Data Import Template Library 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Utility Functions and Classes" href="util.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="developer-s-guide">
+<h1>Developer’s Guide<a class="headerlink" href="#developer-s-guide" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+</section>
+<section id="purpose-and-goals">
+<h2>Purpose and Goals<a class="headerlink" href="#purpose-and-goals" title="Link to this heading">¶</a></h2>
+<p>The goal of this workflow is to provide scientists and analysts with the ability to create fully automated data pipelines out of their existing analysis workflows. The architecture and design were done with consideration of future expansion, ease of customization, and easily integrated into the existing data infrastructure. While many tools and microservices currently exist for the development of similar workflows, most or all require payment or a subscription service. In consideration of budgetary constraints, the workflow can be run on any host that supports container-based applications with access to a github repository.</p>
+</section>
+<section id="who-should-read-this-guide">
+<h2>Who should read this guide?<a class="headerlink" href="#who-should-read-this-guide" title="Link to this heading">¶</a></h2>
+</section>
+<section id="use-case">
+<h2>Use Case<a class="headerlink" href="#use-case" title="Link to this heading">¶</a></h2>
+<p>The application can work with any script or module based workflow (in R or Python(in progress)) demanding data access and processing on a consistent basis (daily, monthly, etc). The current configuration files can service data platforms Copernicus Marine (in progress), OPeNDAP or ERDDAP. The modular design allows for straightforward expansion of custom modules to other data platforms that have a defined method for remote data requests. Because the full workflow is built with consideration towards robustness and resilience, it is excessive for simple workflows that rely on data import and data processing outside of the Data Import Python Library which the Controller relies on.
+Constraints
+As of August 2025, the application is still in its development stage. Current limitations are:</p>
+</section>
+</section>
+<section id="systems-architecture">
+<h1>Systems Architecture<a class="headerlink" href="#systems-architecture" title="Link to this heading">¶</a></h1>
+<section id="component-overview">
+<h2>Component Overview<a class="headerlink" href="#component-overview" title="Link to this heading">¶</a></h2>
+<p>The purpose of this document is to outline the technical specifications, processes, and architecture of the Automation Template Application (or Automated Data Import Template).</p>
+<section id="controller-data-import-workflow">
+<h3>Controller (Data Import Workflow)<a class="headerlink" href="#controller-data-import-workflow" title="Link to this heading">¶</a></h3>
+</section>
+<section id="base-image-description">
+<h3>Base Image Description<a class="headerlink" href="#base-image-description" title="Link to this heading">¶</a></h3>
+<p>The image is based on python:3:13:3-slim for its level of security as well as its minimal design which allows for fast build times. Consideration should be given towards any further customization that relies on using any python version exceeding 3.13, in which case all operating system packages should be updated along with the base image and retested locally to ensure compatibility. Without compatible operating system dependencies the container will not build and the full containerized workflow cannot run.</p>
+</section>
+<section id="behaviour">
+<h3>Behaviour<a class="headerlink" href="#behaviour" title="Link to this heading">¶</a></h3>
+<p>Reads configuration file
+Performs data pulls against config specified resource
+Facilitates initial subsetted distribution of datasets across storage resources
+Facilitates sending arguments and datasets to and from container B
+Orchestrates cron schedules associated with different configuration files
+Ensuring isolation of workflows by container
+Logs and manifest (run metadata) are output based on the workflow specified in configuration file</p>
+</section>
+</section>
+<section id="repo-components">
+<h2>Repo Components<a class="headerlink" href="#repo-components" title="Link to this heading">¶</a></h2>
+<section id="source-code">
+<h3>Source Code<a class="headerlink" href="#source-code" title="Link to this heading">¶</a></h3>
+<p>Classes for facilitating data transfer between sources given a configuration file
+Registry : Tracking data stored including metadata
+DataImport : Facilitates data transfer from source to mnt1
+GLORYS
+ERDDAP
+OPENDAP (stalled)
+ParseConfig : Reads configuration file and parses out response
+Main : runs primary workflow
+Makefile (not currently available): Facilitates different workflows based on arguments
+Testing Suite
+Pytest testing suite where each class has an associated testing suite</p>
+</section>
+</section>
+<section id="processing-template-r-api-template">
+<h2>Processing Template (R API Template)<a class="headerlink" href="#processing-template-r-api-template" title="Link to this heading">¶</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>The R API Worker template relies on an r-base:4.5.1 docker image in favor of the greatest compatibility with R based workflows and scripts and to reduce the risk of the need for any future updates due to deprecated renv dependencies.</p>
+</section>
+<section id="id1">
+<h3>Repo Components<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>api.R: Included in template repo, forked from original template repo
+Facilitates web server and receives arguments and run specs from the controller
+Sets scripts arguments and filenames
+Monitors job and sends response
+Renv.lock - must be included especially in cases
+/renv (included by users or generated by Christina)
+In the future, this should be cached in an isolated storage folder so as to not bloat github repos.
+Dockerfile
+Templated Script</p>
+</section>
+<section id="components-and-behavior">
+<h3>Components and Behavior<a class="headerlink" href="#components-and-behavior" title="Link to this heading">¶</a></h3>
+<p>Configuration File
+Stored in mounted directory or in config folder
+Every workflow is associated with one configuration file
+Mount Points
+Must remain consistent through container runs and are environmental variables to be referenced by both containers
+Additional mounts may be specified for workflows requiring more custom configurations by submitting a ticket with the associated container to ITD and messaging Dave Chevrier.
+Mounts:
+mnt1/ - Any repository on the NEFSC that acts as storage for the output of the initial subset data pull
+mnt2/ - Any supplementary data required by either container
+mnt3/ - Outputs generated by the worker container
+Logs
+Application logs stored in mounted drive containing project folder
+1 project folder per workflow
+Application Source Code
+Controller:
+Github &lt;link&gt;
+For development purposes, only actions-test spawns the CI/CD pipeline relied upon for deploying containers into the network.
+Template Source Code
+Worker: Depends on workflow described in github_actions, arguments added through container A
+Github Actions File
+Defines schedules and logic for execution
+Runs docker compose build command to create containers
+Container Controller/Worker Template Interface
+Both containers are premounted to existing dataset repositories as well as logging storage</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">EDAB Automated Data Import Template Library</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">READ ME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html#disclosure">Disclosure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Utility Functions and Classes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#systems-architecture">Systems Architecture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utility Components:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Utility Functions and Classes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="util.html" title="previous chapter">Utility Functions and Classes</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Christina Asante.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/devguide.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
