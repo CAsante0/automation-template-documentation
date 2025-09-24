@@ -14,7 +14,6 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Developer’s Guide" href="devguide.html" />
     <link rel="prev" title="READ ME" href="readme.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -46,6 +45,42 @@ current_year : The year being identified</p>
 <p>RETURNS:</p>
 <p>boolean, list(optional) True if all datasets in a given month exist, False with list of missing dates otherwise</p>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.compare_schedule">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">compare_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last_retrieval_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/app/main.html#compare_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.main.compare_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Compare the last date retrieved to the current schedule</p>
+<p>PARAMS
+last_retrieval_date: The last date recorded
+current_schedule : The current schedule of the workfloy</p>
+<p>RETURNS
+boolean : True, to pull the resource. False, otherwise.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.get_date_last_pull">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">get_date_last_pull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_registry_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="reference internal" href="_modules/app/main.html#get_date_last_pull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.main.get_date_last_pull" title="Link to this definition">¶</a></dt>
+<dd><p>Get the date of the last pull from the associated registry</p>
+<p>PARAMS
+current_registry_filepath : The filepath of the registry associated with the current workflow</p>
+<p>RETURNS
+The date of the last registry pull for the current resource</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.read_glorys_config">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">read_glorys_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./glorys_config_cmems_mod_glo_phy_myint_0.083deg_P1D-m.json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/app/main.html#read_glorys_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.main.read_glorys_config" title="Link to this definition">¶</a></dt>
+<dd><p>Ingests a json glorys config file of expected workflow details.</p>
+<p>PARAMS
+json_filepath : A json file following the current json config template</p>
+<p>RETURNS
+Dict representation of variables</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.request_test_main">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">request_test_main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/main.html#request_test_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.main.request_test_main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py exception" id="module-app.util.parse_config">
 <dt class="sig sig-object py" id="app.util.parse_config.ConfigValidationError">
@@ -271,7 +306,7 @@ rule: data type constraint in validation (variable.yaml) file</p>
 
 <dl class="py class" id="module-app.util.glorys">
 <dt class="sig sig-object py" id="app.util.glorys.GLORYS">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.util.glorys.</span></span><span class="sig-name descname"><span class="pre">GLORYS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_date_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_latitude_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_longitude_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_depth_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/util/glorys.html#GLORYS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.util.glorys.GLORYS" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.util.glorys.</span></span><span class="sig-name descname"><span class="pre">GLORYS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_date_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_latitude_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_longitude_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_depth_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/util/glorys.html#GLORYS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.util.glorys.GLORYS" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="app.util.glorys.GLORYS.fetch_dataset">
 <span class="sig-name descname"><span class="pre">fetch_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#app.util.registry.Registry" title="app.util.registry.Registry"><span class="pre">Registry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proportion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/util/glorys.html#GLORYS.fetch_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.util.glorys.GLORYS.fetch_dataset" title="Link to this definition">¶</a></dt>
@@ -408,13 +443,15 @@ If the record already exists, this is logged and creature otherwise.</p>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">READ ME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#disclosure">Disclosure</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Utility Functions and Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devguide.html">Developer’s Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devguide.html#systems-architecture">Systems Architecture</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Utility Components:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Utility Functions and Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#app.main.check_monthly"><code class="docutils literal notranslate"><span class="pre">check_monthly()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.main.compare_schedule"><code class="docutils literal notranslate"><span class="pre">compare_schedule()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.main.get_date_last_pull"><code class="docutils literal notranslate"><span class="pre">get_date_last_pull()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.main.read_glorys_config"><code class="docutils literal notranslate"><span class="pre">read_glorys_config()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.main.request_test_main"><code class="docutils literal notranslate"><span class="pre">request_test_main()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app.util.parse_config.ConfigValidationError"><code class="docutils literal notranslate"><span class="pre">ConfigValidationError</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app.util.parse_config.ParseConfig"><code class="docutils literal notranslate"><span class="pre">ParseConfig</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app.util.data_transfer.ERDDAP"><code class="docutils literal notranslate"><span class="pre">ERDDAP</span></code></a></li>
@@ -430,7 +467,6 @@ If the record already exists, this is logged and creature otherwise.</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="readme.html" title="previous chapter">READ ME</a></li>
-      <li>Next: <a href="devguide.html" title="next chapter">Developer’s Guide</a></li>
   </ul></li>
 </ul>
 </div>
