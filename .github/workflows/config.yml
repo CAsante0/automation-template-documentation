@@ -1,0 +1,72 @@
+name: Deploy Combined Jekyll & Sphinx Site
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # 1. Setup & Build Jekyll / RMarkdown
+      - name: Setup Ruby (for Jekyll)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true # runs 'bundle install' automatically if Gemfile exists
+
+      - name: Build Jekyll Site
+        run: |
+          # Standard Jekyll build outputs to _site/ by default
+          bundle exec jekyll build 
+
+      # 2. Setup & Build Sphinx
+      - name: Set up Python (for Sphinx)
+        uses: actions/setup-python@v5
+        with:
+          python-packages: 'sphinx' # Add your sphinx themes/extensions here
+
+      - name: Build Sphinx Documentation
+        run: |
+          # Build Sphinx into a temporary directory
+          sphinx-build -b html ./sphinx_docs ./sphinx_output
+
+      # 3. MELD THE SITES TOGETHER
+      - name: Merge Sphinx into Jekyll Subfolder
+        run: |
+          # Create a 'docs' directory inside the compiled Jekyll site
+          mkdir -p _site/docs
+          # Copy the Sphinx HTML files into that directory
+          cp -r ./sphinx_output/* _site/docs/
+          # Ensure GitHub Pages doesn't ignore Sphinx's underscore folders
+          touch _site/.nojekyll
+          touch _site/docs/.nojekyll
+
+      # 4. Deploy the combined '_site' directory
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site' # This now contains both Jekyll AND the Sphinx /docs/ folder
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

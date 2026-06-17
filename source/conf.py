@@ -1,35 +1,36 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-##edab-automation-template-controller
-import sys
 import os
-#sys.path.insert(0, os.path.abspath('..\\src'))
+import sys
 
-print(os.getcwd())
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-title = 'NEFSC'
-project = 'EDAB Automated Data Import Template Library'
-copyright = '2025, Christina Asante'
-author = 'Christina Asante'
-release = '2025'
+# Provide the absolute path to your original repository's src folder
+# This completely bypasses the root-level 'app.py' file!
+repo_root = os.environ['AT_REPO_URL']
+src_folder = os.path.join(repo_root, "src")
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+# Force Python to prioritize looking INSIDE src/ before scanning the repository root.
+# This prevents it from picking up the root-level 'app.py' script file!
+sys.path.insert(0, src_folder)
+sys.path.insert(1, repo_root)
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+# Set the PYTHONPATH environment variable globally for child processes/autodoc imports
+os.environ["PYTHONPATH"] = src_folder + os.pathsep + repo_root + os.pathsep + os.environ.get("PYTHONPATH", "")
+
+project = 'Automation Template Documentation'
+copyright = '2026, Christina Asante - NOAA Affiliate'
+author = 'Christina Asante - NOAA Affiliate'
+release = '1.0.0'
+
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "sphinx.ext.autosummary", "myst_parser"]
+autosummary_generate = True
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 templates_path = ['_templates']
 exclude_patterns = []
-
-
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
 html_static_path = ['_static']

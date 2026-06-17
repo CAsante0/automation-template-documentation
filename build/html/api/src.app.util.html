@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>src.app.util package &#8212; Automation Template Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="src.app package" href="src.app.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="src-app-util-package">
+<h1>src.app.util package<a class="headerlink" href="#src-app-util-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-src.app.util.data_transfer">
+<span id="src-app-util-data-transfer-module"></span><h2>src.app.util.data_transfer module<a class="headerlink" href="#module-src.app.util.data_transfer" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.data_transfer.</span></span><span class="sig-name descname"><span class="pre">ImportDatasets</span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.DEFAULT_PREFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_PREFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DATA'</span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.DEFAULT_PREFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.DEFAULT_SCHEDULE">
+<span class="sig-name descname"><span class="pre">DEFAULT_SCHEDULE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.DEFAULT_SCHEDULE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.DEFAULT_SUFFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_SUFFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.DEFAULT_SUFFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.VARIABLE_KEY">
+<span class="sig-name descname"><span class="pre">VARIABLE_KEY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.VARIABLE_KEY" title="Link to this definition">¶</a></dt>
+<dd><p>Defines parent class from which all data source platforms can inherit attributes of for building larger workflows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.custom_post_import_hook">
+<span class="sig-name descname"><span class="pre">custom_post_import_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.custom_post_import_hook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.custom_pre_import_hook">
+<span class="sig-name descname"><span class="pre">custom_pre_import_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.custom_pre_import_hook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.export_dataset">
+<span class="sig-name descname"><span class="pre">export_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.app.util.registry.Registry" title="src.app.util.registry.Registry"><span class="pre">Registry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BytesIO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['1900-01-02',</span> <span class="pre">'1901-02']</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.export_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Prechecks the existence of a dataset within a given mount point before writing it.</p>
+<p>PARAMETERS</p>
+<ul class="simple">
+<li><p>registry_obj : The registry associated with the current workflow</p></li>
+<li><p>dataset_id : Unique ID given by ERDDAP to specific dataset</p></li>
+<li><p>filepath : Target filepath of current resource</p></li>
+<li><p>filename : Filename of the pulled dataset</p></li>
+<li><p>file_type : File type of current dataset (nc or csv)</p></li>
+<li><p>dataset : Pulled dataset expressed as a BytesIO object</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>boolean : True if the file was successfully written to the designated location, False otherwise</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.fetch_dataset">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fetch_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.fetch_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Must be implemented by child to return a lazy xarray Dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.finalize_storage">
+<span class="sig-name descname"><span class="pre">finalize_storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xr_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">registry_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.finalize_storage" title="Link to this definition">¶</a></dt>
+<dd><p>Handles import logic and registry updates, currently only compatible with netcdfs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.format_variable_subfolder_name">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">format_variable_subfolder_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vars_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.format_variable_subfolder_name" title="Link to this definition">¶</a></dt>
+<dd><p>Format the name of nested folders for the current dataset based on variable presence using naming conventions established for that specific data source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>vars_list</strong> (<em>list</em>) – A list of variables in the current dataset. Example: [“sea_surface_temperature”] | [“sea_surface_temperature”, “sea_water_salinity”],</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the subfolder with naming conventions applied and formatted for storage. : “bottomT” | “bottomT-salinity”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.get_filename">
+<span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.get_filename" title="Link to this definition">¶</a></dt>
+<dd><p>The Standard Naming Convention.
+Structure: PREFIX_[SCHEDULE]_DATASET_VARS_DATE_[SUFFIX].EXTENSION</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.get_project_directory">
+<span class="sig-name descname"><span class="pre">get_project_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subfolder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['dataset',</span> <span class="pre">'time',</span> <span class="pre">'variable']</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.get_project_directory" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the associated dataset product directory based on a custom
+mappable ordering and ensures it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>dataset_id</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.get_target_path">
+<span class="sig-name descname"><span class="pre">get_target_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.get_target_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.import_dataset">
+<span class="sig-name descname"><span class="pre">import_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">global_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.import_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Base method for importing datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>global_end</strong> – Description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.process_time_window">
+<span class="sig-name descname"><span class="pre">process_time_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.app.util.registry.Registry" title="src.app.util.registry.Registry"><span class="pre">Registry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.process_time_window" title="Link to this definition">¶</a></dt>
+<dd><p>Docstring for process_time_window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>registry_obj</strong> (<a class="reference internal" href="../util.html#app.util.registry.Registry" title="app.util.registry.Registry"><em>Registry</em></a>) – Description</p></li>
+<li><p><strong>win_start</strong> – Description</p></li>
+<li><p><strong>win_end</strong> – Description</p></li>
+<li><p><strong>variables</strong> – Description</p></li>
+<li><p><strong>schedule</strong> – Description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.reconcile_disk_gaps">
+<span class="sig-name descname"><span class="pre">reconcile_disk_gaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.app.util.registry.Registry" title="src.app.util.registry.Registry"><span class="pre">Registry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.reconcile_disk_gaps" title="Link to this definition">¶</a></dt>
+<dd><p>Insepcts target directory for missing datasets, performs automatic retrieval and registry update of missing dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>registry_obj</strong> (<a class="reference internal" href="../util.html#app.util.registry.Registry" title="app.util.registry.Registry"><em>Registry</em></a>) – Description</p></li>
+<li><p><strong>start_date</strong> (<em>str</em>) – Description</p></li>
+<li><p><strong>end_date</strong> (<em>str</em>) – Description</p></li>
+<li><p><strong>variables</strong> (<em>list</em>) – Description</p></li>
+<li><p><strong>schedule</strong> (<em>str</em>) – Description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.transform_dataset">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">transform_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow_uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.transform_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for templating and transforming datasets from the source resource.
+Respects the same schedule functionality as import_dataset, processing data in time windows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.validate_data_source">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">validate_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.validate_data_source" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for validating data sources and performing logins.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.write_csv">
+<span class="sig-name descname"><span class="pre">write_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.write_csv" title="Link to this definition">¶</a></dt>
+<dd><p>Output dataset to a csv file in the given location.</p>
+<p>PARAMETERS:</p>
+<ul class="simple">
+<li><p>data : The dataset expressed as bytes</p></li>
+<li><p>filepath : The filepath</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>boolean : True, if successfully outputed to the designated resource.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.write_dataset_runner">
+<span class="sig-name descname"><span class="pre">write_dataset_runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dap_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.write_dataset_runner" title="Link to this definition">¶</a></dt>
+<dd><p>Output dataset to a file in the given location, with logic to determine the appropriate writing method based on the data type.</p>
+<p>PARAMETERS:</p>
+<ul class="simple">
+<li><p>data : The dataset, either as bytes or an xarray Dataset</p></li>
+<li><p>filepath : The filepath</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>boolean : True, if successfully outputed to the designated resource.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.data_transfer.ImportDatasets.write_nc">
+<span class="sig-name descname"><span class="pre">write_nc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.data_transfer.ImportDatasets.write_nc" title="Link to this definition">¶</a></dt>
+<dd><p>Output dataset to a netcdf file to the specified filepath.
+Streams data via OS-level block-aligned buffering for high performance.
+Fully operating system agnostic (Windows/Linux/macOS).</p>
+<p>PARAMETERS:
+* data     : The dataset encoded as a seekable stream buffer (e.g., io.BytesIO)
+* filepath : The target file path</p>
+<p>RETURNS:
+* boolean  : True if successfully outputted to the designated resource.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.erddap">
+<span id="src-app-util-erddap-module"></span><h2>src.app.util.erddap module<a class="headerlink" href="#module-src.app.util.erddap" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.erddap.</span></span><span class="sig-name descname"><span class="pre">ERDDAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.app.util.data_transfer.ImportDatasets" title="src.app.util.data_transfer.ImportDatasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImportDatasets</span></code></a></p>
+<p>A lightweight ERDDAP data source implementation as a sibling to GLORYS/OPENDAP.</p>
+<p>This class implements the minimal required hooks for the workflow:
+fetch_dataset, get_filename, validate_data_source, transform_dataset, export_dataset.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.DEFAULT_PREFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_PREFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERDDAP'</span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.DEFAULT_PREFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.VARIABLE_KEY">
+<span class="sig-name descname"><span class="pre">VARIABLE_KEY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.VARIABLE_KEY" title="Link to this definition">¶</a></dt>
+<dd><p>Defines parent class from which all data source platforms can inherit attributes of for building larger workflows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.compose_erddap_base_url">
+<span class="sig-name descname"><span class="pre">compose_erddap_base_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dap_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint_extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.compose_erddap_base_url" title="Link to this definition">¶</a></dt>
+<dd><p>Returns formatted erddap url</p>
+<p>PARAMETERS:</p>
+<ul class="simple">
+<li><p>base_erddap_url : The URL of the endpoint without extensions</p></li>
+<li><p>dataset_id : ERDDAP unique dataset ID</p></li>
+<li><p>dap_type : The dap type (griddap or tabledap)</p></li>
+<li><p>file_type : The expected resource’s file type (nc or csv)</p></li>
+<li><p>constraint_extension : The constraints as formatted by ERDDAP standards for griddap or tabledap</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>str : Full ERDDAP endpoint compatible URL</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.export_dataset">
+<span class="sig-name descname"><span class="pre">export_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.export_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Prechecks the existence of a dataset within a given mount point before writing it.</p>
+<p>PARAMETERS</p>
+<ul class="simple">
+<li><p>registry_obj : The registry associated with the current workflow</p></li>
+<li><p>dataset_id : Unique ID given by ERDDAP to specific dataset</p></li>
+<li><p>filepath : Target filepath of current resource</p></li>
+<li><p>filename : Filename of the pulled dataset</p></li>
+<li><p>file_type : File type of current dataset (nc or csv)</p></li>
+<li><p>dataset : Pulled dataset expressed as a BytesIO object</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>boolean : True if the file was successfully written to the designated location, False otherwise</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.fetch_dataset">
+<span class="sig-name descname"><span class="pre">fetch_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_variable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.fetch_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Fetches the dataset using instance attributes for configuration.
+Uses robust requests-based parsing to capture server-side error messages.</p>
+<p>Very bloated, could be cut down.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.format_erddap_source_url">
+<span class="sig-name descname"><span class="pre">format_erddap_source_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dap_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.format_erddap_source_url" title="Link to this definition">¶</a></dt>
+<dd><p>Formats an ERDDAP compliant URL string</p>
+<p>PARAMETERS:</p>
+<ul class="simple">
+<li><p>dataset_id : The unique ID of the erddap dataset</p></li>
+<li><p>field_variables : Parameters within the final dataset (chlor_a, degrees, count, etc)</p></li>
+<li><p>constraint_variables : A dictionary containing variables along with their range constraints</p></li>
+<li><p>file_type : The file type of the returned dataset</p></li>
+<li><p>base_url : The ERDDAP base url</p></li>
+<li><p>dap_type : The dap type of the target resource (gridded or tabledap)</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>ERDDAP formatted URL</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.format_variable_subfolder_name">
+<span class="sig-name descname"><span class="pre">format_variable_subfolder_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vars_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.format_variable_subfolder_name" title="Link to this definition">¶</a></dt>
+<dd><p>Format the name of nested folders for the current dataset based on variable presence using naming conventions established for that specific data source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>vars_list</strong> (<em>list</em>) – A list of variables in the current dataset. Example: [“sea_surface_temperature”] | [“sea_surface_temperature”, “sea_water_salinity”],</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the subfolder with naming conventions applied and formatted for storage. : “bottomT” | “bottomT-salinity”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.set_constraint_variables">
+<span class="sig-name descname"><span class="pre">set_constraint_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constraint_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.set_constraint_variables" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.set_dataset">
+<span class="sig-name descname"><span class="pre">set_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.set_dataset" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.set_manual_source_url">
+<span class="sig-name descname"><span class="pre">set_manual_source_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.set_manual_source_url" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.set_parameter_variables">
+<span class="sig-name descname"><span class="pre">set_parameter_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.set_parameter_variables" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.transform_dataset">
+<span class="sig-name descname"><span class="pre">transform_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.transform_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for templating and transforming datasets from the source resource.
+Respects the same schedule functionality as import_dataset, processing data in time windows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.erddap.ERDDAP.validate_data_source">
+<span class="sig-name descname"><span class="pre">validate_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.erddap.ERDDAP.validate_data_source" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for validating data sources and performing logins.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.glorys">
+<span id="src-app-util-glorys-module"></span><h2>src.app.util.glorys module<a class="headerlink" href="#module-src.app.util.glorys" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.glorys.</span></span><span class="sig-name descname"><span class="pre">GLORYS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.glorys.GLORYS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.app.util.data_transfer.ImportDatasets" title="src.app.util.data_transfer.ImportDatasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImportDatasets</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.DEFAULT_PREFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_PREFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GLORYS_REANALYSIS'</span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.DEFAULT_PREFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.DEFAULT_SCHEDULE">
+<span class="sig-name descname"><span class="pre">DEFAULT_SCHEDULE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DAILY'</span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.DEFAULT_SCHEDULE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.DEFAULT_SUFFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_SUFFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.DEFAULT_SUFFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.VARIABLE_KEY">
+<span class="sig-name descname"><span class="pre">VARIABLE_KEY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'ocean_mixed_layer_thickness_defined_by_sigma_theta':</span> <span class="pre">'mixedLayerDepth',</span> <span class="pre">'sea_water_potential_temperature':</span> <span class="pre">'temperature',</span> <span class="pre">'sea_water_potential_temperature_at_sea_floor':</span> <span class="pre">'bottomT',</span> <span class="pre">'sea_water_salinity':</span> <span class="pre">'salinity'}</span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.VARIABLE_KEY" title="Link to this definition">¶</a></dt>
+<dd><p>Defines parent class from which all data source platforms can inherit attributes of for building larger workflows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.fetch_dataset">
+<span class="sig-name descname"><span class="pre">fetch_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_variable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.glorys.GLORYS.fetch_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Fetches dataset from copernicus marine api for given variable and time range.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.format_variable_subfolder_name">
+<span class="sig-name descname"><span class="pre">format_variable_subfolder_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vars_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.format_variable_subfolder_name" title="Link to this definition">¶</a></dt>
+<dd><p>Format the name of nested folders for the current dataset based on variable presence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>vars_list</strong> (<em>list</em>) – A list of variables in the current dataset. Example: [“sea_surface_temperature”] | [“sea_surface_temperature”, “sea_water_salinity”],</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the subfolder with naming conventions applied and formatted for storage. : “bottomT” | “bottomT-salinity”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.get_filename">
+<span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.get_filename" title="Link to this definition">¶</a></dt>
+<dd><p>This creates the output filename of the given dataset</p>
+<p>PARAMETERS:</p>
+<p>dataset_id : The unique ID of the current dataset
+unit_time_range : List of time range for the described dataset</p>
+<p>RETURNS:</p>
+<p>str : A string of the formatted output file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.login" title="Link to this definition">¶</a></dt>
+<dd><p>Logs current user into copernicus marine api for fetching datasets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.post_import_hook">
+<span class="sig-name descname"><span class="pre">post_import_hook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.glorys.GLORYS.post_import_hook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.glorys.GLORYS.validate_data_source">
+<span class="sig-name descname"><span class="pre">validate_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.glorys.GLORYS.validate_data_source" title="Link to this definition">¶</a></dt>
+<dd><p>Performs full login step for Copernicus Marine and creates registry for workflow</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>registry_id</strong> (<em>str</em>) – Description</p></li>
+<li><p><strong>kwargs</strong> – Description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.metadata">
+<span id="src-app-util-metadata-module"></span><h2>src.app.util.metadata module<a class="headerlink" href="#module-src.app.util.metadata" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.metadata.Metadata">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.metadata.</span></span><span class="sig-name descname"><span class="pre">Metadata</span></span><a class="headerlink" href="#src.app.util.metadata.Metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.metadata.Metadata.get_csv_metadata">
+<span class="sig-name descname"><span class="pre">get_csv_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.metadata.Metadata.get_csv_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Get associated metadata of a given netcdf file</p>
+<p>PARAMS:</p>
+<p>filename : A path to the original file</p>
+<p>RETURNS:</p>
+<p>Associated metadata as a json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.metadata.Metadata.get_nc_metadata">
+<span class="sig-name descname"><span class="pre">get_nc_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.metadata.Metadata.get_nc_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Get associated metadata of a given netcdf file and return as an
+alphabetized JSON string.</p>
+<p>PARAMS:
+filename : A path to the original file</p>
+<p>RETURNS:
+Associated metadata as an alphabetized JSON string</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.missing_files">
+<span id="src-app-util-missing-files-module"></span><h2>src.app.util.missing_files module<a class="headerlink" href="#module-src.app.util.missing_files" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.app.util.missing_files.find_missing_dates_inferred">
+<span class="sig-prename descclassname"><span class="pre">src.app.util.missing_files.</span></span><span class="sig-name descname"><span class="pre">find_missing_dates_inferred</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.missing_files.find_missing_dates_inferred" title="Link to this definition">¶</a></dt>
+<dd><p>Scans a directory for GLORYS files, extracts hyphenated dates (YYYY-MM-DD)
+from filenames, infers the start/end dates from the file set, and identifies
+which dates within that range are not represented by a file.</p>
+<p>The file format is assumed to be:
+<a href="#id1"><span class="problematic" id="id2">GLORYS_REANALYSIS_</span></a>…_{DATE_STRING}_alldays.nc</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory_path</strong> – The path to the directory to scan.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of dates (as strings) that are missing a corresponding file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.opendap">
+<span id="src-app-util-opendap-module"></span><h2>src.app.util.opendap module<a class="headerlink" href="#module-src.app.util.opendap" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.opendap.</span></span><span class="sig-name descname"><span class="pre">OPENDAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.opendap.OPENDAP" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.app.util.data_transfer.ImportDatasets" title="src.app.util.data_transfer.ImportDatasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImportDatasets</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.DEFAULT_PREFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_PREFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'OPENDAP'</span></span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.DEFAULT_PREFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.DEFAULT_SCHEDULE">
+<span class="sig-name descname"><span class="pre">DEFAULT_SCHEDULE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DAILY'</span></span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.DEFAULT_SCHEDULE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.DEFAULT_SUFFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_SUFFIX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'None'</span></span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.DEFAULT_SUFFIX" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.VARIABLE_KEY">
+<span class="sig-name descname"><span class="pre">VARIABLE_KEY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.VARIABLE_KEY" title="Link to this definition">¶</a></dt>
+<dd><p>Defines parent class from which all data source platforms can inherit attributes of for building larger workflows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.export_dataset">
+<span class="sig-name descname"><span class="pre">export_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.export_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Prechecks the existence of a dataset within a given mount point before writing it.</p>
+<p>PARAMETERS</p>
+<ul class="simple">
+<li><p>registry_obj : The registry associated with the current workflow</p></li>
+<li><p>dataset_id : Unique ID given by ERDDAP to specific dataset</p></li>
+<li><p>filepath : Target filepath of current resource</p></li>
+<li><p>filename : Filename of the pulled dataset</p></li>
+<li><p>file_type : File type of current dataset (nc or csv)</p></li>
+<li><p>dataset : Pulled dataset expressed as a BytesIO object</p></li>
+</ul>
+<p>RETURNS:</p>
+<ul class="simple">
+<li><p>boolean : True if the file was successfully written to the designated location, False otherwise</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.fetch_dataset">
+<span class="sig-name descname"><span class="pre">fetch_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_variable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.fetch_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Fetches and subsets the dataset.
+Prioritizes discovered catalog files; falls back to base URL for static/stream endpoints.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.format_variable_subfolder_name">
+<span class="sig-name descname"><span class="pre">format_variable_subfolder_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vars_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.format_variable_subfolder_name" title="Link to this definition">¶</a></dt>
+<dd><p>Format the name of nested folders for the current dataset based on variable presence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>vars_list</strong> (<em>list</em>) – A list of variables in the current dataset. Example: [“sea_surface_temperature”] | [“sea_surface_temperature”, “sea_water_salinity”],</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the subfolder with naming conventions applied and formatted for storage. : “bottomT” | “bottomT-salinity”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.transform_dataset">
+<span class="sig-name descname"><span class="pre">transform_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.transform_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for templating and transforming datasets from the source resource.
+Respects the same schedule functionality as import_dataset, processing data in time windows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.opendap.OPENDAP.validate_data_source">
+<span class="sig-name descname"><span class="pre">validate_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.opendap.OPENDAP.validate_data_source" title="Link to this definition">¶</a></dt>
+<dd><p>Defines behaviours for validating data sources and performing logins.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.parse_config">
+<span id="src-app-util-parse-config-module"></span><h2>src.app.util.parse_config module<a class="headerlink" href="#module-src.app.util.parse_config" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ConfigValidationError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.parse_config.</span></span><span class="sig-name descname"><span class="pre">ConfigValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.parse_config.ConfigValidationError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Defines errors for handling malformed configuration files for workflow runs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ConfigValidationError.config_shape_validation">
+<span class="sig-name descname"><span class="pre">config_shape_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validation_config_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ConfigValidationError.config_shape_validation" title="Link to this definition">¶</a></dt>
+<dd><p>Error check for mismatch in user provided config file and data validation file</p>
+<p>###redundant to validate config params</p>
+<p>PARAMETERS:</p>
+<p>error_log : current error log</p>
+<p>RAISES:</p>
+<p>ConfigValidationError : if configuration file values provided by user does not match types outline in validation.yaml</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ConfigValidationError.parameter_type_error_check">
+<span class="sig-name descname"><span class="pre">parameter_type_error_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ConfigValidationError.parameter_type_error_check" title="Link to this definition">¶</a></dt>
+<dd><p>Compares data type validation (variable.yaml) file against user provided configuration file.</p>
+<p>PARAMETERS:</p>
+<p>error_log : current running error log
+user_val : configuration file input
+key: current configuration file key
+rule: data type constraint in validation (variable.yaml) file</p>
+<p>RETURNS:</p>
+<p>none</p>
+<p>RAISES:</p>
+<p>ConfigValidationError : if config data input does not match expected type</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.parse_config.</span></span><span class="sig-name descname"><span class="pre">ParseConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_config_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles parsing and validation configuration and datatype validation files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig.extract_erddap_grid_params">
+<span class="sig-name descname"><span class="pre">extract_erddap_grid_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig.extract_erddap_grid_params" title="Link to this definition">¶</a></dt>
+<dd><p>Extrapolates config parameters to manually generate config given an erddap griddap URL</p>
+<p>PARAMETERS:</p>
+<p>query : The griddap compatible parameter extensions of the ERDDAP URL</p>
+<p>RETURNS:</p>
+<p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig.extract_erddap_table_params">
+<span class="sig-name descname"><span class="pre">extract_erddap_table_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig.extract_erddap_table_params" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts config parameters to manually generate config given an erddap tabledap URL</p>
+<p>PARAMETERS:</p>
+<p>query : The parameter extensions of the ERDDAP URL</p>
+<p>RETURNS:</p>
+<p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig.parse_erddap_url">
+<span class="sig-name descname"><span class="pre">parse_erddap_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig.parse_erddap_url" title="Link to this definition">¶</a></dt>
+<dd><p>Populates ERDDAP configuration file based on existing URL</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig.populate_config">
+<span class="sig-name descname"><span class="pre">populate_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig.populate_config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.parse_config.ParseConfig.validate_config_params">
+<span class="sig-name descname"><span class="pre">validate_config_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.parse_config.ParseConfig.validate_config_params" title="Link to this definition">¶</a></dt>
+<dd><p>Compares config.yaml against expected data types provided in variable_constraints.yaml to ensure user given parameters are formatted correctly.</p>
+<p>PARAMETERS:</p>
+<p>None</p>
+<p>RETURNS:</p>
+<p>bool : True if all user provided configuration file data types are valid.</p>
+<p>RAISES:</p>
+<p>ConfigValidationError : for malformed configuration files</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.app.util.parse_config.print_formatted_dict">
+<span class="sig-prename descclassname"><span class="pre">src.app.util.parse_config.</span></span><span class="sig-name descname"><span class="pre">print_formatted_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_obt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.parse_config.print_formatted_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-src.app.util.registry">
+<span id="src-app-util-registry-module"></span><h2>src.app.util.registry module<a class="headerlink" href="#module-src.app.util.registry" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.registry.</span></span><span class="sig-name descname"><span class="pre">Registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_folder_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">registry_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.check_monthly">
+<span class="sig-name descname"><span class="pre">check_monthly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.check_monthly" title="Link to this definition">¶</a></dt>
+<dd><p>Checks registry of workflow to ensure full month (each day) is stored before running monthly workflows.</p>
+<p>PARAMETERS:</p>
+<p>current_registry : The registry of the current resource
+current_month : The month being identified
+current_year : The year being identified</p>
+<p>RETURNS:</p>
+<p>boolean, list(optional) True if all datasets in a given month exist, False with list of missing dates otherwise</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.check_yearly">
+<span class="sig-name descname"><span class="pre">check_yearly</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.check_yearly" title="Link to this definition">¶</a></dt>
+<dd><p>Check that a set of monthly recorded files encompass a full year</p>
+<p>PARAMETERS:</p>
+<p>current_registry : The registry of the current resource</p>
+<p>RETURNS:</p>
+<p>boolean, list(optional) True if all monthly datasets in a given year exist, False with list of missing dates otherwise</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.create_manifest_record">
+<span class="sig-name descname"><span class="pre">create_manifest_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_retrieved</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">execution_notes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry.create_manifest_record" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.create_registry">
+<span class="sig-name descname"><span class="pre">create_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.create_registry" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes a workflow registry in logging folder for the defined dataset/workflow.</p>
+<p>PARAMETERS:</p>
+<p>manifest_id : The unique ID of a workflow manifest registry</p>
+<p>RETURNS:</p>
+<p>boolean : True if the registry was created at the location provided and False otherwise</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.create_registry_folder">
+<span class="sig-name descname"><span class="pre">create_registry_folder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry.create_registry_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Creates parent folder of registries if it does not already exist</p>
+<p>PARAMETERS:</p>
+<p>RETURNS:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.dataset_to_bytesio">
+<span class="sig-name descname"><span class="pre">dataset_to_bytesio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'nc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_netcdf3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BytesIO</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.dataset_to_bytesio" title="Link to this definition">¶</a></dt>
+<dd><p>Writes a dataset to an in-memory buffer via a temporary file.
+Does not assume or read ANY instance attributes from the ds object unless file_type matches.
+Defaults to NetCDF4 unless force_netcdf3 is explicitly set to True.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_csv_metadata">
+<span class="sig-name descname"><span class="pre">get_csv_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.get_csv_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts headers and row count from CSV buffer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_current_registry">
+<span class="sig-name descname"><span class="pre">get_current_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_folder_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry.get_current_registry" title="Link to this definition">¶</a></dt>
+<dd><p>reimplement to address finding a registry that hasnt been found or defined in the current run</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_date_last_pull">
+<span class="sig-name descname"><span class="pre">get_date_last_pull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.get_date_last_pull" title="Link to this definition">¶</a></dt>
+<dd><p>Get the date of the last pull from the associated registry</p>
+<p>PARAMS
+current_registry_filepath : The filepath of the registry associated with the current workflow</p>
+<p>RETURNS
+The date of the last registry pull for the current resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_last_recorded_date">
+<span class="sig-name descname"><span class="pre">get_last_recorded_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.get_last_recorded_date" title="Link to this definition">¶</a></dt>
+<dd><p>Docstring for get_last_recorded_date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Description</p></li>
+<li><p><strong>dataset_id</strong> (<em>str</em>) – Description</p></li>
+<li><p><strong>variable</strong> (<em>str</em>) – Description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_latest_dataset_pulled">
+<span class="sig-name descname"><span class="pre">get_latest_dataset_pulled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.get_latest_dataset_pulled" title="Link to this definition">¶</a></dt>
+<dd><p>Get the latest dataset pulled from the registry</p>
+<p>PARAMS
+current_registry_filepath : The filepath of the registry associated with the current workflow</p>
+<p>RETURNS
+The date of the latest registry pull for the current resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_metadata">
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry.get_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Handler function for extracting metadata from nc or csv buffers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.get_nc_metadata">
+<span class="sig-name descname"><span class="pre">get_nc_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.get_nc_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts global attributes from a nuances-loaded xarray dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.load_registry">
+<span class="sig-name descname"><span class="pre">load_registry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.Registry.load_registry" title="Link to this definition">¶</a></dt>
+<dd><p>Load registry into pandas csv</p>
+<p>PARAMETERS:</p>
+<p>RETURNS:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.registry.Registry.update_registry">
+<span class="sig-name descname"><span class="pre">update_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.app.util.registry.Registry.update_registry" title="Link to this definition">¶</a></dt>
+<dd><p>Updates the registry CSV with metadata. Uses atomic writes and retries
+to handle file locks and prevent corruption.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Associated Registry object for the current workflow context</p></li>
+<li><p><strong>record</strong> (<em>dict</em>) – The current record to be added to the registry</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A bool based on whether the current record was successfully appended for not.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.app.util.registry.main">
+<span class="sig-prename descclassname"><span class="pre">src.app.util.registry.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.registry.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-src.app.util.template">
+<span id="src-app-util-template-module"></span><h2>src.app.util.template module<a class="headerlink" href="#module-src.app.util.template" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.template.TemplateApp">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.template.</span></span><span class="sig-name descname"><span class="pre">TemplateApp</span></span><a class="headerlink" href="#src.app.util.template.TemplateApp" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.template.TemplateApp.clean_up_repo">
+<span class="sig-name descname"><span class="pre">clean_up_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.template.TemplateApp.clean_up_repo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.template.TemplateApp.clone_github_repo">
+<span class="sig-name descname"><span class="pre">clone_github_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">branch_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_env_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./template'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_app_foldername</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'template_app_example_85097206_20-50-51'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.template.TemplateApp.clone_github_repo" title="Link to this definition">¶</a></dt>
+<dd><p>Clone the python application from the github repository</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.template.TemplateApp.run_local_template_app">
+<span class="sig-name descname"><span class="pre">run_local_template_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">python_run_command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'python</span> <span class="pre">app.py'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_app_parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'param1':</span> <span class="pre">'Dog',</span> <span class="pre">'param2':</span> <span class="pre">'Cat'}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.template.TemplateApp.run_local_template_app" title="Link to this definition">¶</a></dt>
+<dd><p>Run the template application with the container parameter’s defined within the configuration file.</p>
+<p>template_repo_path : The path to the template application
+python_run_command : The command used to start the application
+template_app_parameters : The parameters that should be passed as arguments to the script</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.template.TemplateApp.run_template_app_runner">
+<span class="sig-name descname"><span class="pre">run_template_app_runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supplemental_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">github_repo_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_application_location_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_application_repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./template'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_app_entrypoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_app_arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'example_uuid_for_template_app_arguments'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'example_run_id_for_template_app_arguments'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.template.TemplateApp.run_template_app_runner" title="Link to this definition">¶</a></dt>
+<dd><p>Dispatch for running templated scripts.Scripts may either be located in an accessible github repository (‘github’); locally, within the <cite>/template</cite> folder (‘local’); or is an r script (‘r-container’)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.time_glorys">
+<span id="src-app-util-time-glorys-module"></span><h2>src.app.util.time_glorys module<a class="headerlink" href="#module-src.app.util.time_glorys" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.time_glorys.GlorysTime">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.time_glorys.</span></span><span class="sig-name descname"><span class="pre">GlorysTime</span></span><a class="headerlink" href="#src.app.util.time_glorys.GlorysTime" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.time_glorys.GlorysTime.find_time_coordinate">
+<span class="sig-name descname"><span class="pre">find_time_coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#src.app.util.time_glorys.GlorysTime.find_time_coordinate" title="Link to this definition">¶</a></dt>
+<dd><p>Return the coordinate object representing time from a dataset part.
+Raises RuntimeError if no such coordinate is found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.time_glorys.GlorysTime.print_time_coverage">
+<span class="sig-name descname"><span class="pre">print_time_coverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.time_glorys.GlorysTime.print_time_coverage" title="Link to this definition">¶</a></dt>
+<dd><p>Helper to log start and end time coverage for a dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.time_glorys.GlorysTime.select_part">
+<span class="sig-name descname"><span class="pre">select_part</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">part_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.time_glorys.GlorysTime.select_part" title="Link to this definition">¶</a></dt>
+<dd><p>Return the matching dataset part, or the default one if none is specified.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.validation">
+<span id="src-app-util-validation-module"></span><h2>src.app.util.validation module<a class="headerlink" href="#module-src.app.util.validation" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.validation.DatasetValidation">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.validation.</span></span><span class="sig-name descname"><span class="pre">DatasetValidation</span></span><a class="headerlink" href="#src.app.util.validation.DatasetValidation" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.validation.DatasetValidation.find_missing_dataset_dates">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">find_missing_dataset_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Logger</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.app.util.validation.DatasetValidation.find_missing_dataset_dates" title="Link to this definition">¶</a></dt>
+<dd><p>Identifies missing dates within a specific window [start_date, terminal_date].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.validation.DatasetValidation.recover_missing_daily_data_module">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">recover_missing_daily_data_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">glorys_instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_check_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.validation.DatasetValidation.recover_missing_daily_data_module" title="Link to this definition">¶</a></dt>
+<dd><p>Orchestrates recovery by checking disk gaps and syncing with Registry.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util.workflow_tracker">
+<span id="src-app-util-workflow-tracker-module"></span><h2>src.app.util.workflow_tracker module<a class="headerlink" href="#module-src.app.util.workflow_tracker" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.app.util.workflow_tracker.</span></span><span class="sig-name descname"><span class="pre">WorkflowRunTracker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger_folderpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_save</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simple workflow run tracker.</p>
+<p>Tracks one workflow run for a project configuration.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.add_error">
+<span class="sig-name descname"><span class="pre">add_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.add_error" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.add_file">
+<span class="sig-name descname"><span class="pre">add_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pulled'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.add_file" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.add_step">
+<span class="sig-name descname"><span class="pre">add_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'started'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.add_step" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.complete">
+<span class="sig-name descname"><span class="pre">complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'success'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.complete" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.duration_seconds">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">duration_seconds</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.duration_seconds" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.fail">
+<span class="sig-name descname"><span class="pre">fail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.fail" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.persist">
+<span class="sig-name descname"><span class="pre">persist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.persist" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.start_run">
+<span class="sig-name descname"><span class="pre">start_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.start_run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.app.util.workflow_tracker.WorkflowRunTracker.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#src.app.util.workflow_tracker.WorkflowRunTracker.to_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.app.util">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.app.util" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Automation Template Documentation</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="src.html">src package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+  <li><a href="src.html">src package</a><ul>
+  <li><a href="src.app.html">src.app package</a><ul>
+      <li>Previous: <a href="src.app.html" title="previous chapter">src.app package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Christina Asante - NOAA Affiliate.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/src.app.util.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
