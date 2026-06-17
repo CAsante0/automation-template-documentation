@@ -1,77 +1,30 @@
-alabaster==1.0.0
-annotated-types==0.7.0
-arcosparse==0.4.1
-babel==2.17.0
-beautifulsoup4==4.13.3
-boto3==1.38.42
-botocore==1.38.42
-certifi==2025.4.26
-cftime==1.6.4.post1
-charset-normalizer==3.4.1
-click==8.2.1
-cloudpickle==3.1.1
-colorama==0.4.6
-copernicusmarine==2.1.2
-crc32c==2.7.1
-dask==2025.5.1
-docutils==0.21.2
-donfig==0.8.1.post1
--e git+https://github.com/NEFSC/NEFSC_EDAB_Data_Workflow_Template.git@c6c34831a87d31e6a44e6130ce95cae19ec8efc9#egg=edab_automation_template_app
--e git+https://github.com/NEFSC/NEFSC_EDAB_Data_Workflow_Template.git@c6c34831a87d31e6a44e6130ce95cae19ec8efc9#egg=edab_automation_template_controller
-fsspec==2025.5.1
-h5netcdf==1.6.1
-h5py==3.14.0
-idna==3.10
-imagesize==1.4.1
-iniconfig==2.1.0
-Jinja2==3.1.6
-jmespath==1.0.1
-legacy-cgi==2.6.2
-locket==1.0.0
-lxml==5.3.1
-MarkupSafe==3.0.2
-netCDF4==1.7.2
-numcodecs==0.16.1
-numpy==2.2.3
-packaging==24.2
-pandas==2.2.3
-partd==1.4.2
-pluggy==1.5.0
-pyarrow==20.0.0
-pydantic==2.11.7
-pydantic_core==2.33.2
-pydap==3.5.3
-Pygments==2.19.2
-pystac==1.13.0
-pytest==7.4.4
-python-dateutil==2.9.0.post0
-python-dotenv==1.1.1
-pytz==2025.1
-PyYAML==6.0.2
-requests==2.32.3
-roman-numerals-py==3.1.0
-ruamel.yaml==0.18.0
-s3transfer==0.13.0
-schedule==1.2.2
-scipy==1.15.2
-semver==3.0.4
-setuptools==80.9.0
-six==1.17.0
-snowballstemmer==3.0.1
-soupsieve==2.6
-Sphinx==8.2.3
-sphinxcontrib-applehelp==2.0.0
-sphinxcontrib-devhelp==2.0.0
-sphinxcontrib-htmlhelp==2.1.0
-sphinxcontrib-jsmath==1.0.1
-sphinxcontrib-qthelp==2.0.0
-sphinxcontrib-serializinghtml==2.0.0
-toolz==1.0.0
-tqdm==4.67.1
-typing-inspection==0.4.1
-typing_extensions==4.12.2
-tzdata==2025.1
-urllib3==2.3.0
-WebOb==1.8.9
-xarray==2025.1.2
-zarr==3.0.8
+alabaster @ file:///home/conda/feedstock_root/build_artifacts/alabaster_1733750398730/work
+babel @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_babel_1772555330/work
+backports.zstd @ file:///D:/bld/bld/rattler-build_backports.zstd_1781450835/work
+Brotli @ file:///D:/bld/brotli-split_1764017006836/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1781719850827/work/certifi
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1775127091311/work
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1733218098505/work
+docutils @ file:///home/conda/feedstock_root/build_artifacts/docutils_1766092521263/work
+h2 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_h2_1756364871/work
+hpack @ file:///home/conda/feedstock_root/build_artifacts/hpack_1737618293087/work
+hyperframe @ file:///home/conda/feedstock_root/build_artifacts/hyperframe_1737618333194/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_idna_1781620148/work
+imagesize @ file:///home/conda/feedstock_root/build_artifacts/imagesize_1773752068233/work
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jinja2_1764517220/work
+MarkupSafe @ file:///D:/bld/markupsafe_1772444956616/work
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
+Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1774796700044/work
+PySocks @ file:///D:/bld/pysocks_1733217287171/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_requests_1778851103/work
+roman-numerals @ file:///home/conda/feedstock_root/build_artifacts/roman-numerals_1766002886874/work
+snowballstemmer @ file:///home/conda/feedstock_root/build_artifacts/snowballstemmer_1780468120386/work
+Sphinx @ file:///home/conda/feedstock_root/build_artifacts/sphinx_1764850256295/work
+sphinxcontrib-applehelp @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-applehelp_1733754101641/work
+sphinxcontrib-devhelp @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-devhelp_1733754113405/work
+sphinxcontrib-htmlhelp @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-htmlhelp_1733754280555/work
+sphinxcontrib-jsmath @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-jsmath_1733753744933/work
+sphinxcontrib-qthelp @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-qthelp_1733753408017/work
+sphinxcontrib-serializinghtml @ file:///home/conda/feedstock_root/build_artifacts/sphinxcontrib-serializinghtml_1781260274145/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1778188571305/work
+win_inet_pton @ file:///D:/bld/win_inet_pton_1733130564612/work

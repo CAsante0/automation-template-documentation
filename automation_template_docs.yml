@@ -1,0 +1,8 @@
+name: automation_template_docs
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - sphinx
+  - myst-parser
