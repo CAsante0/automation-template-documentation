@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>src &#8212; Automation Template Documentation 1.0.0 documentation</title>
+    <title>System Architecture &#8212; Automation Template Documentation 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -31,26 +31,21 @@
 
           <div class="body" role="main">
             
-  <section id="src">
-<h1>src<a class="headerlink" href="#src" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="src.html">src package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="src.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src.app.html">src.app package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="src.app.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.app.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.app.html#src-app-make-module">src.app.make module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.app.html#module-src.app">Module contents</a></li>
+  <section id="system-architecture">
+<h1>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading">¶</a></h1>
+<p>This reference manual documents the backend architectural design patterns utilized across the modules.</p>
+<section id="data-ingestion-pipeline">
+<h2>.. Data Ingestion Pipeline<a class="headerlink" href="#data-ingestion-pipeline" title="Link to this heading">¶</a></h2>
+<p>The ingestion subsystem validates input structural constraints before piping metrics down to algorithmic transforms.</p>
+</section>
+<section id="core-dependencies">
+<h2>Core Dependencies<a class="headerlink" href="#core-dependencies" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Python 3.11+</p></li>
+<li><p>Pandas (Data manipulation structural processing)</p></li>
+<li><p>Jinja2 (HTML static template reporting components)</p></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="src.html#module-src">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</section>
 </section>
 
 
@@ -107,7 +102,7 @@
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/api/modules.rst.txt"
+      <a href="../_sources/pages/architecture.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

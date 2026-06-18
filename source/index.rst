@@ -1,42 +1,64 @@
-.. Technical Documentation Master Index
+---
+layout: default
+title: Home - Documentation Hub
+---
 
-Python Source Code API Reference
-===============================
+# Welcome to the Project Hub
 
-This section is strictly reserved for developer reference, housing the auto-generated code maps extracted from the Python codebase strings.
+This platform is designed to help you run data workflows and analysis seamlessly, even if you do not have a background in Python programming. 
 
-.. note::
-   Looking for user guides, scripts setup, or error logs?
-   `Click here to return to the Main Project Hub </>`_.
+What This Project Does
+----------------------
+This tool automates the process of ingestion, cleaning, and reporting. Think of it as a digital assembly line: you drop your raw data files into one end, and it outputs polished, publication-ready reports at the other.
 
-.. To pull in your python packages dynamically, use the standard directives below:
+Documentation Roadmap
+---------------------
+.. toctree::
+   :maxdepth: 1
+   :caption: General Overview
 
-.. Toctree::
-   :maxdepth: 2
-   :caption: Code Modules:
+   readme
 
-.. automodule:: src.app
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting Started
 
+   pages/terminology
+   pages/installation
 
-:maxdepth: 1
-:caption: Using the Tools
+.. toctree::
+   :maxdepth: 1
+   :caption: Using the Tools
 
-jekyll_pages/workflow
-jekyll_pages/running-template
-jekyll_pages/running-custom
+   pages/workflow
+   pages/running-template
+   pages/running-custom
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Troubleshooting & Reference
 
-:maxdepth: 1
-:caption: Troubleshooting & Reference
+   pages/architecture
+   pages/logs-auditing
+   pages/build-docs
+   api/modules
+   api/app
+   
+#### markdown:
 
-jekyll_pages/logs-auditing
-api_reference
+### Documentation Roadmap
 
-Indices and Tables
-==================
+#### Getting Started (No Coding Required)
+* [Terminology & Glossary](./pages/terminology.html) — Demystifying the jargon.
+* [Installation Guide](./pages/installation.html) — Getting your computer ready.
 
-* :ref:`genindex`
-* :ref:`modindex`
+#### Using the Tools
+* [Workflow Overview](./pages/workflow.html) — How data moves through the system.
+* [Running the Template](./pages/running-template.html) — Executing your first test run.
+* [Running Custom Scripts](./pages/running-custom.html) — How to plug in your own data.
+
+#### Troubleshooting & Logs
+* [Logs and Auditing Mechanics](./pages/logs-auditing.html) — Error definitions and log file monitoring.
+
+#### Developer Reference
+* [View Automated Source Code API](./docs/index.html) — Raw Python class and module syntax trees generated directly from source code.

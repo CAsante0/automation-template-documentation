@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Logs and Auditing Mechanics &#8212; Automation Template Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a class="reference internal" href="#/"><span class="xref myst">← Back to Home</span></a></p>
+<section id="logs-and-auditing-mechanics">
+<h1>Logs and Auditing Mechanics<a class="headerlink" href="#logs-and-auditing-mechanics" title="Link to this heading">¶</a></h1>
+<p>This page explains how to parse diagnostic log outputs and handle errors when a workflow halts unexpectedly.</p>
+<section id="common-errors-cheat-sheet">
+<h2>Common Errors Cheat Sheet<a class="headerlink" href="#common-errors-cheat-sheet" title="Link to this heading">¶</a></h2>
+<p>If your process stops, cross-reference the last line of your terminal output against this table:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Error Message</p></th>
+<th class="head text-left"><p>What It Means</p></th>
+<th class="head text-left"><p>How to Fix It</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></p></td>
+<td class="text-left"><p>The tool cannot locate your file.</p></td>
+<td class="text-left"><p>Check your file name spelling in the custom config settings layer.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">PermissionError</span></code></p></td>
+<td class="text-left"><p>The target Excel/CSV file is open.</p></td>
+<td class="text-left"><p>Close the data spreadsheet in Excel and re-run the script.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code></p></td>
+<td class="text-left"><p>A required tool library is missing.</p></td>
+<td class="text-left"><p>Re-run the environment installation setup step.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-audits">
+<h2>System Audits<a class="headerlink" href="#system-audits" title="Link to this heading">¶</a></h2>
+<p>The application tracks run cycles inside automated transaction histories. Logs are written continuously to the <code class="docutils literal notranslate"><span class="pre">/logs/app.log</span></code> pipeline registry.</p>
+<hr class="docutils" />
+<p><a class="reference internal" href="#/"><span class="xref myst">← Back to Home</span></a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Automation Template Documentation</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Christina Asante - NOAA Affiliate.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/pages/logs-auditing.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
