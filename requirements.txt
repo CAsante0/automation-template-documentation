@@ -92,3 +92,4 @@ win_inet_pton @ file:///D:/bld/win_inet_pton_1733130564612/work
 xarray==2025.1.2
 zarr==3.0.8
 zipp==4.1.0
+sphinx_rtd_theme==3.1.0
