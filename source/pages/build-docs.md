@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Recreating the Documentation
+title: Building this Documentation Guide
 ---
 
-[← Back to Home](/)
+[← Back to Home](./workflow.md)
 
 # Recreating the Documentation
 

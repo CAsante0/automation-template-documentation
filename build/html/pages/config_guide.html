@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration File Specification &mdash; Automation Template Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Automation Template Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction and Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Automation Template</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Running a Workflow</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Automation Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running-custom.html">Creating Custom Data Source Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting &amp; References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logs_auditing.html">Understanding Pipeline Artifacts &amp; Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-docs.html">Recreating the Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Core Components of a Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/src.app.util.html">src.app.util package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Automation Template Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration File Specification</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/config_guide.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuration-file-specification">
+<h1>Configuration File Specification<a class="headerlink" href="#configuration-file-specification" title="Link to this heading"></a></h1>
+<p>This guide describes the structure, blocks, and parameters used to write configuration files for the ETL pipeline. Configuration files are written in JSON and allow you to define various workflows, import strategies, data source properties, and coordinates for spatial or temporal subsetting.</p>
+<hr class="docutils" />
+<section id="configuration-file-naming-conventions">
+<h2>0. Configuration File Naming Conventions<a class="headerlink" href="#configuration-file-naming-conventions" title="Link to this heading"></a></h2>
+<p><strong>Format &amp; Structure:</strong> Configuration files use JSON (JavaScript Notation), structured as an array of objects representing workflow profiles.</p>
+<p><strong>Naming Convention:</strong> Use the standard pattern:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;data_source&gt;_&lt;variables/products&gt;_&lt;data_provider&gt;.&lt;version_number&gt;.json
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;data_provider&gt;</span></code>: The data source provider or organization (e.g., <code class="docutils literal notranslate"><span class="pre">CMEMS</span></code>, <code class="docutils literal notranslate"><span class="pre">COASTWATCH</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;data_source&gt;</span></code>: The ingestion protocol or profile identifier (e.g., <code class="docutils literal notranslate"><span class="pre">GLORYS</span></code>, <code class="docutils literal notranslate"><span class="pre">ERDDAP</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;variables/products&gt;</span></code>: Descriptive tag for targeted data parameters (e.g., <code class="docutils literal notranslate"><span class="pre">PHYSICS</span></code>, <code class="docutils literal notranslate"><span class="pre">CHLOR-A</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;version_number&gt;</span></code>: Configuration schema version track (e.g., <code class="docutils literal notranslate"><span class="pre">v1</span></code>).</p></li>
+</ul>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">CMEMS_GLORYS_PHYSICS.v1.json</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="file-structure-overview">
+<h2>1. File Structure Overview<a class="headerlink" href="#file-structure-overview" title="Link to this heading"></a></h2>
+<p>The configuration file is a JSON array containing objects. Each object represents a data source group or a collection of workflow profiles (such as <code class="docutils literal notranslate"><span class="pre">&quot;GLORYS&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;ERDDAP_WORKFLOW&quot;</span></code>).</p>
+<p>Within each profile, you define two primary configuration blocks:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">workflow</span></code></strong>: Specifies high-level orchestrations such as workflow name, execution steps, source types, scheduling parameters, and logging paths.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">import_dataset</span></code></strong>: Contains granular dataset specifications, target folder paths, variables, time ranges, bounding boxes, and source-specific access types.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="configuration-blocks-fields-reference">
+<h2>2. Configuration Blocks &amp; Fields Reference<a class="headerlink" href="#configuration-blocks-fields-reference" title="Link to this heading"></a></h2>
+<section id="the-workflow-block">
+<h3>2.1. The <code class="docutils literal notranslate"><span class="pre">workflow</span></code> Block<a class="headerlink" href="#the-workflow-block" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Required / Optional</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Allowed Values / Examples</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">workflow_name</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;CMEMS_GLORYS_DAILY&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;COASTWATCH_CHLOR-A_DAILY&quot;</span></code></p></td>
+<td><p>A unique identifying name for the orchestration pipeline.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">steps</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>Array of Strings</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[&quot;validate_data_source&quot;,</span> <span class="pre">&quot;import_dataset&quot;]</span></code></p></td>
+<td><p>Order of structural functions or execution stages to trigger.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">schedule</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>Array of Strings</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[&quot;daily&quot;]</span></code>, <code class="docutils literal notranslate"><span class="pre">[&quot;weekly&quot;]</span></code></p></td>
+<td><p>How often the orchestrator triggers or queries the data source.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;glorys&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;erddap&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;opendap&quot;</span></code></p></td>
+<td><p>The source access mechanism or protocol type.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">log_folder_path</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;./logger&quot;</span></code></p></td>
+<td><p>Relative or absolute directory path where pipeline logs are generated.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-import-dataset-block">
+<h3>2.2. The <code class="docutils literal notranslate"><span class="pre">import_dataset</span></code> Block<a class="headerlink" href="#the-import-dataset-block" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Required / Optional</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">one_variable_per_file</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Boolean</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the pipeline separates multiple variables into individual target files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">batch_import</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Boolean</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p>When <code class="docutils literal notranslate"><span class="pre">true</span></code>, pulls all available data since the last recorded sync. When <code class="docutils literal notranslate"><span class="pre">false</span></code>, pulls a single or latest individual iteration.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mnt1_import</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Root folder structure directory where retrieved raw datasets are stored.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">project_name</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Name of the overarching research project or organizational category (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;GLORYS_PHYSICS_REANALYSIS_FORECAST&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dataset_id</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>The unique institution-assigned identifier given to the dataset (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;cmems_mod_glo_phy_my_0.083deg_P1D-m&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filename_prefix</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Custom prefix prepended to all output or downloaded filenames.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">schedule</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>Array of Strings</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Temporal frequency for checking data source updates (separate from <code class="docutils literal notranslate"><span class="pre">dataset_temporal_scope</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dataset_temporal_scope</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;daily&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;monthly&quot;</span></code></p></td>
+<td><p>Target chunk duration or temporal resolution for atomic output datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">time_range</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>Array</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Bounds mapping in ISO 8601 string format <code class="docutils literal notranslate"><span class="pre">[start,</span> <span class="pre">end]</span></code>. Use <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> for the earliest or latest available boundaries (e.g., <code class="docutils literal notranslate"><span class="pre">[&quot;1993-01-01&quot;,</span> <span class="pre">&quot;*&quot;]</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dataset_variables</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Array of Strings</p></td>
+<td><p><em>None</em></p></td>
+<td><p>List of specific parameters/fields targeted for import, matching the data source conventions (e.g., <code class="docutils literal notranslate"><span class="pre">[&quot;chlor_a&quot;,</span> <span class="pre">&quot;sea_water_salinity&quot;]</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">latitude</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Array of Floats</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Latitudinal bounding box coordinates formatted as <code class="docutils literal notranslate"><span class="pre">[min_latitude,</span> <span class="pre">max_latitude]</span></code>. Ranges: -90.0 to 90.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">longitude</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Array of Floats</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Longitudinal bounding box coordinates formatted as <code class="docutils literal notranslate"><span class="pre">[min_longitude,</span> <span class="pre">max_longitude]</span></code>. Ranges: -180.0 to 180.0.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">base_url</span></code></p></td>
+<td><p>Optional (ERDDAP)</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Root web link endpoint used to build API requests for ERDDAP servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">output_format</span></code></p></td>
+<td><p>Optional (ERDDAP)</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;nc&quot;</span></code></p></td>
+<td><p>File download format (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;nc&quot;</span></code> for NetCDF, <code class="docutils literal notranslate"><span class="pre">&quot;csv&quot;</span></code>, etc.).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dap_type</span></code></p></td>
+<td><p>Optional (ERDDAP)</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;griddap&quot;</span></code></p></td>
+<td><p>ERDDAP access protocol layer, commonly <code class="docutils literal notranslate"><span class="pre">&quot;griddap&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;tabledap&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dimensions</span></code></p></td>
+<td><p>Optional (ERDDAP)</p></td>
+<td><p>Array of Strings</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Coordinate dimensions required for multidimensional queries (e.g., <code class="docutils literal notranslate"><span class="pre">[&quot;time&quot;,</span> <span class="pre">&quot;latitude&quot;,</span> <span class="pre">&quot;longitude&quot;]</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-transform-dataset-block">
+<h3>2.3. The <code class="docutils literal notranslate"><span class="pre">transform_dataset</span></code> Block<a class="headerlink" href="#the-transform-dataset-block" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">transform_dataset</span></code> block handles the execution parameters required for running downstream analysis, data cleaning, or custom modeling algorithms directly after data extraction. This block registers the processing framework, remote or local source code repositories, and the required execution arguments to establish absolute data provenance.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Required / Optional</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mnt1_import</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Source dataset directory containing the raw input files, relative to the mounted drive root directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mnt3_processed</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Output directory where transformed results, figures, or aggregated data are saved, relative to the mounted drive root directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">template_application_location_type</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;local&quot;</span></code></p></td>
+<td><p>Specifies how or where the analysis code environment is executed. Allowed options include <code class="docutils literal notranslate"><span class="pre">&quot;r-container&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;github&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;local&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">template_app_entrypoint</span></code></p></td>
+<td><p>Required</p></td>
+<td><p>String</p></td>
+<td><p><em>None</em></p></td>
+<td><p>The target handler script name used to execute the application (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;dissolved_oxygen.R&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;process_spatial_averages.py&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">template_application_repo</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>String / Null</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p>Reference identifier for localized version-controlled environments where applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">github_repo_url</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>String / Null</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p>The remote GitHub repository URL holding the source code branch used for the transformation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">template_app_arguments</span></code></p></td>
+<td><p>Optional</p></td>
+<td><p>Object</p></td>
+<td><p><em>None</em></p></td>
+<td><p>Key-value pairs passed as parameters directly to the script at runtime (such as input overrides or targeted variable names).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="docutils" />
+<section id="configuration-examples">
+<h2>3. Configuration Examples<a class="headerlink" href="#configuration-examples" title="Link to this heading"></a></h2>
+<p>Below are standard compliant templates for configuring COPERNICUS MARINE (GLORYS) and NOAA CoastWatch (ERDDAP) workflow endpoints.</p>
+<section id="example-1-copernicus-marine-glorys-dataset">
+<h3>Example 1: Copernicus Marine (GLORYS) Dataset<a class="headerlink" href="#example-1-copernicus-marine-glorys-dataset" title="Link to this heading"></a></h3>
+<p>This example executes a daily workflow that checks for new daily data updates, subsets the global model to a specific latitudinal/longitudinal bounding box over the Northeast Shelf, and extracts four distinct physical oceanography variables into single-variable NetCDF files.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;GLORYS&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;workflow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;workflow_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CMEMS_GLORYS_DAILY&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;validate_data_source&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;import_dataset&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;daily&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;source_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;glorys&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;import_dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;one_variable_per_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;batch_import&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mnt1_import&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/GLORYS_DEMO/SOURCE/NES_PHY_001_024/&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;project_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GLORYS_PHYSICS_REANALYSIS_FORECAST&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename_prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GLORYS_PHY_001&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;daily&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;dataset_temporal_scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;daily&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;time_range&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1993-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;dataset_variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;sea_water_potential_temperature_at_sea_floor&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;ocean_mixed_layer_thickness_defined_by_sigma_theta&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;sea_water_salinity&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;sea_water_potential_temperature&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">22.5</span><span class="p">,</span><span class="w"> </span><span class="mf">48.4</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-82.5</span><span class="p">,</span><span class="w"> </span><span class="mf">-51.5</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;dataset_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cmems_mod_glo_phy_my_0.083deg_P1D-m&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="example-2-noaa-coastwatch-erddap-dataset">
+<h3>Example 2: NOAA CoastWatch (ERDDAP) Dataset<a class="headerlink" href="#example-2-noaa-coastwatch-erddap-dataset" title="Link to this heading"></a></h3>
+<p>This example executes a daily workflow constraint that targets a fixed historical time-slice via an external ERDDAP network, querying specific multidimensional coordinate dimensions to extract and download a single chlorophyll variable into a NetCDF format.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ERDDAP_WORKFLOW&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;workflow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;workflow_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COASTWATCH_CHLOR-A_DAILY&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;import_dataset&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;daily&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;source_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;erddap&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;log_folder_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;import_dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;one_variable_per_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;batch_import&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mnt1_import&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/COASTWATCH_DEMO/SOURCE/NES_4KM_CHLOR_A_DAILY/&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;dataset_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;noaacwNPPN20S3ASCIDINEOF2kmDaily&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename_prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ERDDAP&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://coastwatch.noaa.gov&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nc&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;dap_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;griddap&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;dataset_variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;chlor_a&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;dimensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;longitude&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;time_range&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;2025-01-09&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;2025-02-11&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">22.5</span><span class="p">,</span><span class="w"> </span><span class="mf">48.4</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-82.5</span><span class="p">,</span><span class="w"> </span><span class="mf">-51.5</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="example-3-automated-r-container-transformation-fishbot-dissolved-oxygen">
+<h3>Example 3: Automated R-Container Transformation (FISHBOT Dissolved Oxygen)<a class="headerlink" href="#example-3-automated-r-container-transformation-fishbot-dissolved-oxygen" title="Link to this heading"></a></h3>
+<p>This profile executes a monthly workflow designed exclusively to run post-processing computations, pulling a custom analysis script directly from GitHub into a containerized R environment to calculate monthly averages from raw files stored in mount 1 and output the results to mount 3.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FISHBOT_TRANSFORM_WORKFLOW&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;workflow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;workflow_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FISHBOT_DISSOLVED-O2_MONTHLY&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;transform_dataset&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;monthly&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;source_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;erddap&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;transform_dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;mnt1_import&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/FISHBOT/SOURCE/NRT/DISS02/&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mnt3_processed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/FISHBOT/PRODUCT/NRT/monthly/&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;template_application_location_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;r-container&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;template_app_entrypoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dissolved_oxygen.R&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;template_application_repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;github_repo_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/GITHUB-USERNAME/dissolved-oxygen-avg&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;template_app_arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;param1_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;argument_value&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;param2_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mnt1_value&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="environment-file-setup-env">
+<h2>4. Environment File Setup (<code class="docutils literal notranslate"><span class="pre">.env</span></code>)<a class="headerlink" href="#environment-file-setup-env" title="Link to this heading"></a></h2>
+<p>To supplement your workflow configurations without exposing private data or hardcoding local storage structures, you must establish an environment configuration file.</p>
+<p>Create a copy of the <code class="docutils literal notranslate"><span class="pre">.env-example</span></code> file located in the root directory of your cloned application repository, rename it to <code class="docutils literal notranslate"><span class="pre">.env</span></code>, and populate the variables using the formatting below.</p>
+<section id="key-environment-parameters">
+<h3>Key Environment Parameters<a class="headerlink" href="#key-environment-parameters" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">MNT_ONE</span></code></strong>: Maps the default system mount directory used by workflows to resolve relative paths for <code class="docutils literal notranslate"><span class="pre">mnt1_import</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LOGGER_DIR</span></code></strong>: Defines where application-wide activity traces are stored if no localized path is passed to the workflow block.</p></li>
+<li><p>**<code class="docutils literal notranslate"><span class="pre">CM_USERNAME</span></code> / <code class="docutils literal notranslate"><span class="pre">CM_PASSWORD**</span></code>: Secures your access credentials for workflows that communicate with protected servers (such as Copernicus Marine API endpoints).</p></li>
+</ul>
+</section>
+<section id="environment-template-formats">
+<h3>Environment Template Formats<a class="headerlink" href="#environment-template-formats" title="Link to this heading"></a></h3>
+<p>You can configure your environment variables using standard flat text format or JSON, depending on your system execution requirements. This .env file should be stored in the root directory of your cloned Automation Template:</p>
+<section id="option-a-standard-key-value-text-format-env">
+<h4>Option A: Standard Key-Value Text Format (<code class="docutils literal notranslate"><span class="pre">.env</span></code>)<a class="headerlink" href="#option-a-standard-key-value-text-format-env" title="Link to this heading"></a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXAMPLE=foobar
+MNT_ONE=./mnt1
+LOGGER_DIR=./logger
+CM_USERNAME=your_username
+CM_PASSWORD=your_secure_password
+</pre></div>
+</div>
+</section>
+<section id="option-b-json-context-format-env-json">
+<h4>Option B: JSON Context Format (<code class="docutils literal notranslate"><span class="pre">.env.json</span></code>)<a class="headerlink" href="#option-b-json-context-format-env-json" title="Link to this heading"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;EXAMPLE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;MNT_ONE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./mnt1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LOGGER_DIR&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CM_USERNAME&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_username&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CM_PASSWORD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_secure_password!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Christina Asante - NOAA Affiliate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

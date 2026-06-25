@@ -1,0 +1,19 @@
+
+
+
+# How to recreate this documentation
+
+
+
+# Install Sphinx and Its Dependencies in your python environment
+
+
+# Navigate to the root directory of the documentation folder
+
+# Run the command ``` sphinx-apidoc -f -o /folderpath/to/autotemp/clone /source/api```
+
+This regenerates the documentation taken from function and module docstrings and creates the necessary rst files that are embedded into the web application as documentation
+
+# Run make html
+
+Creates html files 

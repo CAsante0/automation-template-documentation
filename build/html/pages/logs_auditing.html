@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Pipeline Artifacts &amp; Logs &mdash; Automation Template Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recreating the Documentation" href="build-docs.html" />
+    <link rel="prev" title="Creating Custom Data Source Modules" href="running-custom.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Automation Template Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction and Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Automation Template</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Option 2: Python virtualenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-dependencies-from-a-requirements-txt-using-pip">Installing Dependencies from a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (Using Pip)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Automation Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running-custom.html">Creating Custom Data Source Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting &amp; Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Understanding Pipeline Artifacts &amp; Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#registry-actions-execution-tracking">1. Registry Actions (Execution Tracking)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#persistent-log-streams-system-messages">2. Persistent Log Streams (System Messages)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-file-trackers-data-inventory">3. Dataset File Trackers (Data Inventory)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anatomy-of-a-data-registry-file">Anatomy of a Data Registry File</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-scenarios-case-by-case-examples">Troubleshooting Scenarios (Case-by-Case Examples)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#case-1-you-are-notified-of-an-issue-with-a-data-pull-remote-provider-failures">Case 1: You are notified of an issue with a data pull (Remote Provider Failures)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-2-you-want-to-verify-if-a-file-for-a-specific-date-was-successfully-processed">Case 2: You want to verify if a file for a specific date was successfully processed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-3-you-want-to-isolate-an-internal-step-failure-within-a-multi-stage-pipeline">Case 3: You want to isolate an internal step failure within a multi-stage pipeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-docs.html">Recreating the Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Core Components of a Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/app.html">AutoTemplate package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Automation Template Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Understanding Pipeline Artifacts &amp; Logs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/logs_auditing.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><a class="reference internal" href="workflow.html"><span class="std std-doc">← Back to Home</span></a></p>
+<hr class="docutils" />
+<section id="understanding-pipeline-artifacts-logs">
+<h1>Understanding Pipeline Artifacts &amp; Logs<a class="headerlink" href="#understanding-pipeline-artifacts-logs" title="Link to this heading"></a></h1>
+<p>Every time a workflow executes, the Automation Template generates three core artifacts to track execution progress, historical data status, and system health. This page outlines these three components—<strong>Registry Actions</strong>, <strong>Persistent Log Streams</strong>, and <strong>Dataset File Trackers</strong>—and provides real-world troubleshooting scenarios.</p>
+<hr class="docutils" />
+<section id="registry-actions-execution-tracking">
+<h2>1. Registry Actions (Execution Tracking)<a class="headerlink" href="#registry-actions-execution-tracking" title="Link to this heading"></a></h2>
+<p>The system maintains a master runtime database (<code class="docutils literal notranslate"><span class="pre">run_tracker.csv</span></code>) that logs the lifecycle and health metrics of every single pipeline run. Each workflow configuration entry acts as a project container that triggers these tracked executions.</p>
+<ul class="simple">
+<li><p><strong>Behavior:</strong> Appends a new line entry for every active run initialization, status transition (<code class="docutils literal notranslate"><span class="pre">initialized</span></code>, <code class="docutils literal notranslate"><span class="pre">running</span></code>, <code class="docutils literal notranslate"><span class="pre">completed</span></code>, <code class="docutils literal notranslate"><span class="pre">failed</span></code>), and error traceback.</p></li>
+<li><p><strong>Key Fields Logged:</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project_id</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">run_id</span></code>: Unique tracking hashes for the execution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">workflow_name</span></code>: Name matching your configuration file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>: Real-time state of the execution pipeline (<code class="docutils literal notranslate"><span class="pre">initialized</span></code>, <code class="docutils literal notranslate"><span class="pre">running</span></code>, <code class="docutils literal notranslate"><span class="pre">completed</span></code>, <code class="docutils literal notranslate"><span class="pre">failed</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">steps</span></code>: A JSON array mapping internal step completions (e.g., <code class="docutils literal notranslate"><span class="pre">[{&quot;name&quot;:</span> <span class="pre">&quot;validate_data_source&quot;,</span> <span class="pre">&quot;status&quot;:</span> <span class="pre">&quot;completed&quot;}]</span></code>).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="persistent-log-streams-system-messages">
+<h2>2. Persistent Log Streams (System Messages)<a class="headerlink" href="#persistent-log-streams-system-messages" title="Link to this heading"></a></h2>
+<p>Each unique workflow manages its own continuous terminal printout stream (e.g., <code class="docutils literal notranslate"><span class="pre">WORKFLOW_NAME.log</span></code>). Unlike individual runtime registries, this stream acts as a single, endless record that appends data across multiple distinct scheduled runs (daily, weekly, etc.).</p>
+<ul class="simple">
+<li><p><strong>Log Rotation Safety:</strong> To prevent text files from growing large enough to crash host environments, an automated log rotation is hard-coded into the pipeline. When a specific workflow log hits <strong>50,000 KB</strong>, the system automatically archives it and rotates to a fresh file.</p></li>
+<li><p><strong>Common Severity Levels:</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INFO</span></code>: Standard execution landmarks (e.g., <code class="docutils literal notranslate"><span class="pre">Attempt</span> <span class="pre">1/5:</span> <span class="pre">Fetching</span> <span class="pre">tabledap...</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WARNING</span></code>: Minor pipeline friction or expected data edge cases (e.g., <code class="docutils literal notranslate"><span class="pre">Fetch</span> <span class="pre">attempt</span> <span class="pre">failed,</span> <span class="pre">retrying...</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ERROR</span></code>: Critical failures or query exceptions returned directly by remote data providers (e.g., <code class="docutils literal notranslate"><span class="pre">ERDDAP</span> <span class="pre">Error</span> <span class="pre">404:</span> <span class="pre">Query</span> <span class="pre">outside</span> <span class="pre">of</span> <span class="pre">variable</span> <span class="pre">actual_range</span></code>).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dataset-file-trackers-data-inventory">
+<h2>3. Dataset File Trackers (Data Inventory)<a class="headerlink" href="#dataset-file-trackers-data-inventory" title="Link to this heading"></a></h2>
+<p>For import-based workflows, the framework acts as an intelligent cache system. Successful data downloads trigger the creation of a local File Tracker inventory (e.g., <code class="docutils literal notranslate"><span class="pre">dataset_id_date.csv</span></code>).</p>
+<ul class="simple">
+<li><p><strong>Behavior:</strong> Whenever a data slice is successfully processed, its structural metadata is extracted and saved to this file.</p></li>
+<li><p><strong>Format Flexibility:</strong> If the underlying target dataset is a binary spatial format (like <strong>NetCDF</strong>), the tracker automatically extracts and flattens its header values into clear table parameters. For tabular files (like <strong>CSV</strong>), relevant row and bounding fields are tracked.</p></li>
+<li><p><strong>Preventing Duplicate Work:</strong> The “Registry/Config Resolution” phase reads this exact file. By checking your data inventory, the pipeline dynamically determines the gap “Delta” (missing dates), meaning it only downloads files you don’t already have.</p></li>
+</ul>
+<section id="anatomy-of-a-data-registry-file">
+<h3>Anatomy of a Data Registry File<a class="headerlink" href="#anatomy-of-a-data-registry-file" title="Link to this heading"></a></h3>
+<p>To trace a file directly back to the pipeline run that generated it, the data registry preserves a comprehensive list of dataset structural properties alongside execution metadata:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">checksum_id</span></code>: Unique cryptographic file signature to check for file corruption.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>: The product ID target specified in your configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_date</span></code>: The targeted data window slice (e.g., <code class="docutils literal notranslate"><span class="pre">['1993-01-01T00:00:00+00:00',</span> <span class="pre">'1993-01-01T23:59:59+00:00']</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_start_date</span></code> / <code class="docutils literal notranslate"><span class="pre">data_end_date</span></code>: Exact baseline timestamps inside the raw payload.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_retrieved</span></code>: Exactly when the system downloaded the slice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_type</span></code> / <code class="docutils literal notranslate"><span class="pre">dataset_source</span></code>: File extensions (<code class="docutils literal notranslate"><span class="pre">nc</span></code>, <code class="docutils literal notranslate"><span class="pre">csv</span></code>) and backend type (<code class="docutils literal notranslate"><span class="pre">GLORYS</span></code>, <code class="docutils literal notranslate"><span class="pre">ERDDAP</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code>: The raw data header dictionary (containing licensing, provider institutions, history logs, and global attributes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number_of_records</span></code>: Integer count verifying payload size.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variables</span></code>: Arrays tracking exactly what metrics were preserved (e.g., <code class="docutils literal notranslate"><span class="pre">['sea_water_potential_temperature_at_sea_floor']</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">workflow_name</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">run_id</span></code>: <strong>The Core Audit Link.</strong> This explicitly stores the exact string name and unique tracking ID matching your configuration and <code class="docutils literal notranslate"><span class="pre">run_tracker.csv</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting-scenarios-case-by-case-examples">
+<h2>Troubleshooting Scenarios (Case-by-Case Examples)<a class="headerlink" href="#troubleshooting-scenarios-case-by-case-examples" title="Link to this heading"></a></h2>
+<section id="case-1-you-are-notified-of-an-issue-with-a-data-pull-remote-provider-failures">
+<h3>Case 1: You are notified of an issue with a data pull (Remote Provider Failures)<a class="headerlink" href="#case-1-you-are-notified-of-an-issue-with-a-data-pull-remote-provider-failures" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>What to Check:</strong> The individual <strong>Log Stream</strong> file for that workflow (e.g., <code class="docutils literal notranslate"><span class="pre">FISHBOT_DISSOLVED-O2.log</span></code>).</p></li>
+<li><p><strong>Why:</strong> When remote servers experience downtime, structural changes, or bad requests, the raw error responses are written straight to the text log.</p></li>
+<li><p><strong>Example Application:</strong> You check the log stream and find an explicit <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> statement:</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2026-06-23 22:30:22,415;ERROR;ERDDAP Error 404: Error { message=&quot;Not Found: Your query produced no matching results. (time&lt;=1993-02-07T23:59:59Z is outside of the variable&#39;s actual_range)&quot; }
+2026-06-23 22:30:22,415;WARNING;Fetch attempt 4 failed for fishbot_realtime...
+</pre></div>
+</div>
+<p><em>Verdict:</em> The log stream immediately reveals that the script’s connection logic is working fine, but the data provider doesn’t actually have records dating back to your requested 1993 timeframe.</p>
+</section>
+<section id="case-2-you-want-to-verify-if-a-file-for-a-specific-date-was-successfully-processed">
+<h3>Case 2: You want to verify if a file for a specific date was successfully processed<a class="headerlink" href="#case-2-you-want-to-verify-if-a-file-for-a-specific-date-was-successfully-processed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>What to Check:</strong> The <strong>Dataset File Tracker</strong> inventory (e.g., <code class="docutils literal notranslate"><span class="pre">cmems_mod_glo_phy_my_0.083deg_P1D-m_2026-06-22.csv</span></code>).</p></li>
+<li><p><strong>Why:</strong> You want to avoid scouring massive raw files or looking through thousands of text logs. You need a simple data index proving that a target timestamp exists on disk.</p></li>
+<li><p><strong>Example Application:</strong> A researcher asks if May 14, 1993, was safely cataloged. You open your tracker file and search the <code class="docutils literal notranslate"><span class="pre">dataset_date</span></code> and <code class="docutils literal notranslate"><span class="pre">status</span></code> columns:</p></li>
+</ul>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>&quot;5b84376dfce6e3e7d6...&quot;, &quot;cmems_mod_glo_phy_my...&quot;, &quot;[&#39;1993-05-14T00:00:00...&#39;, &#39;1993-05-14T23:59:59...&#39;]&quot;, &quot;2026-06-23 18:30:14&quot;, &quot;nc&quot;, &quot;GLORYS&quot;, &quot;5d60dd6b-dc65-4326-86d4-7ff92d5fb29e&quot;
+
+</pre></div>
+</div>
+<p><em>Verdict:</em> The record confirms that a NetCDF file (<code class="docutils literal notranslate"><span class="pre">nc</span></code>) for May 14, 1993, was successfully pulled down and indexed.</p>
+</section>
+<section id="case-3-you-want-to-isolate-an-internal-step-failure-within-a-multi-stage-pipeline">
+<h3>Case 3: You want to isolate an internal step failure within a multi-stage pipeline<a class="headerlink" href="#case-3-you-want-to-isolate-an-internal-step-failure-within-a-multi-stage-pipeline" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>What to Check:</strong> The <strong>Registry / Run Tracker</strong> database (<code class="docutils literal notranslate"><span class="pre">run_tracker.csv</span></code>).</p></li>
+<li><p><strong>Why:</strong> If you have an all-in-one workflow configured to run both an <strong>Import Step</strong> and a <strong>Templated Analysis Step</strong>, a failure at the analysis level might mask a successful import. You need to verify if the file was downloaded successfully despite the downstream crash.</p></li>
+<li><p><strong>Example Application:</strong> Your tracking platform alerts you that a master run finished with a <code class="docutils literal notranslate"><span class="pre">failed</span></code> status. You look inside <code class="docutils literal notranslate"><span class="pre">run_tracker.csv</span></code> to map out the individual internal operations:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;validate_data_source&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;import_dataset&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;templated_analysis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>By grabbing the <code class="docutils literal notranslate"><span class="pre">run_id</span></code> (<code class="docutils literal notranslate"><span class="pre">5d60dd6b-dc65-4326-86d4-7ff92d5fb29e</span></code>) from this row, you switch over to your Dataset Tracker file from <strong>Case 2</strong> and find that exact ID stamped inside the line.
+<em>Verdict:</em> The tracker proves the import pipeline executed perfectly and securely committed the downloaded file to your local database registry before the downstream Python analysis script hit an exception and crashed. You do <em>not</em> need to waste time redownloading the source files.</p>
+<hr class="docutils" />
+<p><a class="reference internal" href="workflow.html"><span class="std std-doc">← Back to Home</span></a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="running-custom.html" class="btn btn-neutral float-left" title="Creating Custom Data Source Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="build-docs.html" class="btn btn-neutral float-right" title="Recreating the Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Christina Asante - NOAA Affiliate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
