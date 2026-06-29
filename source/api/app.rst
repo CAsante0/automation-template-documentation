@@ -1,4 +1,4 @@
-AutoTemplate package
+app package
 ===========
 
 Subpackages

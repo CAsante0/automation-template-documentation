@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoTemplate package &mdash; Automation Template Documentation 1.0.0 documentation</title>
+  <title>app package &mdash; Automation Template Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
@@ -18,9 +18,7 @@
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="app.util package" href="app.util.html" />
-    <link rel="prev" title="Core Components of a Configuration" href="../pages/terminology.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,43 +46,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../pages/installation.html">Option 2: Python virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/installation.html#installing-dependencies-from-a-requirements-txt-using-pip">Installing Dependencies from a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (Using Pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Using the Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Running a Workflow</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../pages/workflow.html">Automation Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/running-custom.html">Creating Custom Data Source Modules</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Troubleshooting &amp; Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting &amp; References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../pages/logs_auditing.html">Understanding Pipeline Artifacts &amp; Logs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/build-docs.html">Recreating the Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/terminology.html">Core Components of a Configuration</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code Documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">AutoTemplate package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="app.util.html">app.util package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-app.make">app.make module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.fetch_github_configs"><code class="docutils literal notranslate"><span class="pre">fetch_github_configs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.get_datasource_class_instance"><code class="docutils literal notranslate"><span class="pre">get_datasource_class_instance()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.initialize_logs"><code class="docutils literal notranslate"><span class="pre">initialize_logs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.makefile_runner"><code class="docutils literal notranslate"><span class="pre">makefile_runner()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.new_parse_config"><code class="docutils literal notranslate"><span class="pre">new_parse_config()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.process_config_data"><code class="docutils literal notranslate"><span class="pre">process_config_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.read_env_file"><code class="docutils literal notranslate"><span class="pre">read_env_file()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#app.make.visualize_workflow"><code class="docutils literal notranslate"><span class="pre">visualize_workflow()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-app">Module contents</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.app.util.html">src.app.util package</a></li>
 </ul>
 
         </div>
@@ -101,7 +77,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">AutoTemplate package</li>
+      <li class="breadcrumb-item active">app package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/app.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -111,8 +87,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="autotemplate-package">
-<h1>AutoTemplate package<a class="headerlink" href="#autotemplate-package" title="Link to this heading"></a></h1>
+  <section id="app-package">
+<h1>app package<a class="headerlink" href="#app-package" title="Link to this heading"></a></h1>
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
@@ -257,15 +233,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="app.util.html#module-app.util.time_glorys">app.util.time_glorys module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="app.util.html#app.util.time_glorys.GlorysTime"><code class="docutils literal notranslate"><span class="pre">GlorysTime</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="app.util.html#app.util.time_glorys.GlorysTime.find_time_coordinate"><code class="docutils literal notranslate"><span class="pre">GlorysTime.find_time_coordinate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="app.util.html#app.util.time_glorys.GlorysTime.print_time_coverage"><code class="docutils literal notranslate"><span class="pre">GlorysTime.print_time_coverage()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="app.util.html#app.util.time_glorys.GlorysTime.select_part"><code class="docutils literal notranslate"><span class="pre">GlorysTime.select_part()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="app.util.html#app-util-time-glorys-module">app.util.time_glorys module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app.util.html#module-app.util.validation">app.util.validation module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="app.util.html#app.util.validation.DatasetValidation"><code class="docutils literal notranslate"><span class="pre">DatasetValidation</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="app.util.html#app.util.validation.DatasetValidation.find_missing_dataset_dates"><code class="docutils literal notranslate"><span class="pre">DatasetValidation.find_missing_dataset_dates()</span></code></a></li>
@@ -402,10 +370,7 @@ str: path of env file loaded, or None if missing.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../pages/terminology.html" class="btn btn-neutral float-left" title="Core Components of a Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="app.util.html" class="btn btn-neutral float-right" title="app.util package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

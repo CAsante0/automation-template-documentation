@@ -29,7 +29,6 @@ Documentation Guide
    :caption: Troubleshooting & References
 
    pages/logs_auditing
-   pages/build-docs
    pages/terminology
 
 .. toctree::
